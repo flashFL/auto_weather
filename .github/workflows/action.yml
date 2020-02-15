@@ -7,7 +7,7 @@ on:
 
 jobs:
   bot:
-    runs-on: ubuntu-latest
+    runs-on: python3.7-latest
     steps:
       - name: 'Checkout codes'
         uses: actions/checkout@v1

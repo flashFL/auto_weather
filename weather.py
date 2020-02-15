@@ -22,20 +22,19 @@ def get_weather(url):
     fout.write("<tr>")
     fout.write("<td>今日气温：%s</td>" % aim[0][4])
     fout.write("</tr>")
-    # print('%s月%s日 %s %s' % aim[0][:4])
-    # print('今日气温：' + aim[0][4])
     fout.write("</table>")
     fout.write("</body>")
     fout.write("</html>")
 
 
-def real_time_weather(url):
-    req = requests.get(url)
-    req.encoding = 'utf-8'
-    soup = BeautifulSoup(req.text, 'html.parser')
-    tem = soup.find_all('div', class_='tem')
-    print(tem)
-    #从表象上看，大概是因为中国天气网使用的是shtml，造成有些内容使用requests或者urllib不可显
+
+# 使用requests.get()方式有些内容不可获得,实时气温功能暂不可用。ps:中国天气网使用的是shtml
+# def real_time_weather(url):
+#     req = requests.get(url)
+#     req.encoding = 'utf-8'
+#     soup = BeautifulSoup(req.text, 'html.parser')
+#     tem = soup.find_all('div', class_='tem')
+#     print(tem)
 
 
 if __name__ == '__main__':
